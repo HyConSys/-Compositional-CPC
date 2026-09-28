@@ -54,15 +54,6 @@ The monolithic numerical SOS program uses
 physical system by this affine substitution. This pullback preserves the Gram
 matrix but does not make rounded floating-point coefficients exact.
 
-## Minimal Julia release
-
-- CPC_Centered_ADMM.jl
-- Verify_Centered_Analytic_CPC.jl
-- CPC_SOS_core.jl
-- Synthesis_Monolithic_SOS.jl
-- Verify_Monolithic_Analytic_CPC.jl
-- Verify_Heterogeneous_Intervals.jl
-
 ## Software
 
 The reported runs used:
