@@ -1,0 +1,8 @@
+{
+  "CPU_model": "Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz",
+  "logical_cpus": 16,
+  "memory_bytes": 32481615872,
+  "memory_GiB": 30.25086212158203,
+  "architecture": "x86_64",
+  "kernel": "7.0.0-43-generic"
+}

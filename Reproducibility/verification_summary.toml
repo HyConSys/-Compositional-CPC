@@ -1,0 +1,106 @@
+[controller_vertex_audit]
+audit_kind = "post-run independent physical vertex audit; published timings unchanged"
+exact_pass = true
+seed = 20261122
+total_input_vertices = 696
+total_successor_vertices = 1392
+
+[[controller_vertex_audit.controllers]]
+N = 2
+exact_pass = true
+input_vertices = 8
+method = "compositional"
+successor_vertices = 16
+[[controller_vertex_audit.controllers]]
+N = 2
+exact_pass = true
+input_vertices = 8
+method = "monolithic"
+successor_vertices = 16
+[[controller_vertex_audit.controllers]]
+N = 10
+exact_pass = true
+input_vertices = 40
+method = "compositional"
+successor_vertices = 80
+[[controller_vertex_audit.controllers]]
+N = 10
+exact_pass = true
+input_vertices = 40
+method = "monolithic"
+successor_vertices = 80
+[[controller_vertex_audit.controllers]]
+N = 50
+exact_pass = true
+input_vertices = 200
+method = "compositional"
+successor_vertices = 400
+[[controller_vertex_audit.controllers]]
+N = 100
+exact_pass = true
+input_vertices = 400
+method = "compositional"
+successor_vertices = 800
+
+[[controller_vertex_audit.plants]]
+N = 2
+distinct_tuples = 2
+matched_first_candidate = true
+matched_progress_policy = true
+matches_original_generator = true
+plant_sha256 = "b26e809960e1182f626bc7110b4d66c24b4de351800b1e48c4f74befc2f4f3e9"
+resolved_progress_policy = "uniform"
+[[controller_vertex_audit.plants]]
+N = 10
+distinct_tuples = 10
+matched_first_candidate = true
+matched_progress_policy = true
+matches_original_generator = true
+plant_sha256 = "926c18521a3961fc6840b7528687ca02dcefd63f294354c0f16ee7c7867b1064"
+resolved_progress_policy = "allocated"
+[[controller_vertex_audit.plants]]
+N = 50
+distinct_tuples = 50
+matched_first_candidate = true
+matched_progress_policy = true
+matches_original_generator = true
+plant_sha256 = "d6a5c322378fc7f4927b2cd63886c999d2520c1d72e89443b2d65191d60fc8e8"
+resolved_progress_policy = "uniform"
+[[controller_vertex_audit.plants]]
+N = 100
+distinct_tuples = 100
+matched_first_candidate = true
+matched_progress_policy = true
+matches_original_generator = true
+plant_sha256 = "47d0de72ce720deabd02b22ee4c5a9ed087dc9052e014d2f2baf22f8cd355a4f"
+resolved_progress_policy = "uniform"
+
+[certificate_reload]
+exact_pass = true
+scope = "all six saved rational witnesses plus physical vertex checks"
+timing_note = "post-run audit only; published measurements unchanged"
+
+[[certificate_reload.results]]
+N = 2
+exact_pass = true
+method = "compositional"
+[[certificate_reload.results]]
+N = 2
+exact_pass = true
+method = "monolithic"
+[[certificate_reload.results]]
+N = 10
+exact_pass = true
+method = "compositional"
+[[certificate_reload.results]]
+N = 10
+exact_pass = true
+method = "monolithic"
+[[certificate_reload.results]]
+N = 50
+exact_pass = true
+method = "compositional"
+[[certificate_reload.results]]
+N = 100
+exact_pass = true
+method = "compositional"

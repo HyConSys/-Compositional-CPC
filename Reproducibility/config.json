@@ -1,0 +1,36 @@
+{
+  "sizes": [
+    2,
+    10,
+    50,
+    100
+  ],
+  "seed": 20261122,
+  "candidates": 3,
+  "memory_gib": 8.0,
+  "search_timeout_seconds": 600.0,
+  "worker_timeout_seconds": 900.0,
+  "solver_timeout_seconds": 120.0,
+  "controller_LP_timeout_seconds": 120,
+  "poll_seconds": 0.5,
+  "source_sha256": {
+    "Benchmark_Direct_CPC.jl": "931351f68e8399cf5b2236da1d9e0af55e0a518ba7875eb5420b5843bbeeaea0",
+    "Synthesis_Direct_CPC.jl": "3f200997258e2c8a2288e79f31b03ce361187053846ad15dca855c5c81eb1d6c",
+    "Synthesis_Buck_CPC.jl": "b51f5fd9fb996aad872f94d3ef1daf5cf4b772374dc1054f89a3b442c65e7fca",
+    "Compare_Direct_CPC.py": "c5a4e73bd26107aebaf270efcce99b16749196ac1b29675c98d968c926501b2f"
+  },
+  "specification": "F G (a_1 OR ... OR a_N)",
+  "controller_coordinates": "normalized",
+  "SOS_variable_units": "original",
+  "alpha": "1/100",
+  "epsilon_local": "1/1000",
+  "degree": 2,
+  "solver": "MOSEK",
+  "composition_formulation": "exact aggregate clique lift",
+  "threads": 1,
+  "repetitions": 1,
+  "progress_policy": "auto",
+  "timing_note": "Phase totals include every attempt. Rejected time is a subset, never added twice.",
+  "memory_note": "Sampled process-group RSS guard, including Conda and warmup; not an OS hard cap.",
+  "created_utc": "2026-11-24T15:05:10.212709+00:00"
+}

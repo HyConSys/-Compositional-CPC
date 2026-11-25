@@ -1,0 +1,34 @@
+M_exact = [["0/1", "0/1", "0/1", "1/1"], ["0/1", "1/1", "0/1", "0/1"]]
+N = 2
+current_scale_A_exact = "1/10"
+distinct_physical_parameter_tuples = 2
+initial_normalized_lower_exact = ["-9/10", "3/5", "-9/10", "3/5"]
+initial_normalized_upper_exact = ["-7/10", "4/5", "-7/10", "4/5"]
+plant_sha256 = "b26e809960e1182f626bc7110b4d66c24b4de351800b1e48c4f74befc2f4f3e9"
+sampling_period_seconds_exact = "1/20000"
+seed = 20261122
+target_radius_exact = "7/20"
+voltage_reference_V_exact = "24/1"
+voltage_scale_V_exact = "1/1"
+
+[[edges]]
+conductance_S_exact = "3/500"
+i = 1
+j = 2
+
+[[modules]]
+C_F_exact = "59/500000"
+E_V_exact = "51/1"
+G_S_exact = "23/100"
+L_H_exact = "49/50000"
+converter = 1
+current_reference_A_exact = "138/25"
+r_Ohm_exact = "11/100"
+[[modules]]
+C_F_exact = "53/500000"
+E_V_exact = "51/1"
+G_S_exact = "6/25"
+L_H_exact = "27/25000"
+converter = 2
+current_reference_A_exact = "144/25"
+r_Ohm_exact = "2/25"

@@ -1,0 +1,32 @@
+{
+  "status": "TIMEOUT",
+  "guard_reason": "TIMEOUT",
+  "returncode": -15,
+  "wall_seconds": 626.3591238770168,
+  "peak_rss_bytes": 5163802624,
+  "phase_seconds": {
+    "SOS_build": 593.4172828197479,
+    "SOS_solve": 0.0,
+    "controller_search": 5.010712705,
+    "exact_verification": 0.0,
+    "physical_reconstruction": 1.357985663
+  },
+  "partial_phase": "SOS_build",
+  "attempt_count": 1,
+  "rejected_attempt_count": 0,
+  "rejected_attempt_seconds": 0,
+  "solver_status": "",
+  "exact_proof_pass": false,
+  "plant_sha256": "d6a5c322378fc7f4927b2cd63886c999d2520c1d72e89443b2d65191d60fc8e8",
+  "search_elapsed_seconds": 600.0468239784241,
+  "reason": "External resource guard",
+  "reload_verification_seconds": null,
+  "scalar_variables": null,
+  "SOS_conditions": null,
+  "coefficient_identities": null,
+  "largest_PSD_block": 0,
+  "resource_stage": "SOS_build",
+  "N": 50,
+  "method": "monolithic",
+  "fresh_reload_pass": false
+}

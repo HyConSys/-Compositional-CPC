@@ -1,0 +1,28 @@
+monolithic attempt 1: solving free B,V SOS problem
+monolithic attempt 1: repairing and verifying exact SOS identities
+
+[1204006] signal (15): Terminated
+in expression starting at Code/Buck_CPC/Results/Direct_Scaling_Auto_20261124/Source_Snapshot/Benchmark_Direct_CPC.jl:240
+gc_setmark_pool_ at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:878 [inlined]
+gc_setmark_pool at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:895 [inlined]
+gc_setmark at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:902 [inlined]
+gc_mark_outrefs at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:2617 [inlined]
+gc_mark_loop_serial_ at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:2690
+gc_mark_loop_serial at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:2713
+gc_mark_loop at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:2894 [inlined]
+_jl_gc_collect at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:3227
+ijl_gc_collect at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:3524
+maybe_collect at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:937 [inlined]
+jl_gc_pool_alloc_inner at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:1293 [inlined]
+ijl_gc_pool_alloc at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:1341
+Dict at ./dict.jl:70
+Lin at Code/Buck_CPC/Results/Direct_Scaling_Auto_20261124/Source_Snapshot/Synthesis_Direct_CPC.jl:43 [inlined]
+* at Code/Buck_CPC/Results/Direct_Scaling_Auto_20261124/Source_Snapshot/Synthesis_Direct_CPC.jl:61
+#25 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+collect_to! at ./array.jl:892 [inlined]
+collect_to_with_first! at ./array.jl:870 [inlined]
+collect at ./array.jl:844
+#sos!#23 at Code/Buck_CPC/Results/Direct_Scaling_Auto_20261124/Source_Snapshot/Synthesis_Direct_CPC.jl:170
+sos! at Code/Buck_CPC/Results/Direct_Scaling_Auto_20261124/Source_Snapshot/Synthesis_Direct_CPC.jl:157
+unknown function (ip: 0x7c6a91101c39)

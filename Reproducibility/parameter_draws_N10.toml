@@ -1,0 +1,134 @@
+M_exact = [["0/1", "0/1", "0/1", "6/13", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "7/13"], ["0/1", "4/7", "0/1", "0/1", "0/1", "3/7", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1"], ["0/1", "0/1", "0/1", "1/2", "0/1", "0/1", "0/1", "1/2", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1"], ["0/1", "0/1", "0/1", "0/1", "0/1", "9/19", "0/1", "0/1", "0/1", "10/19", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1"], ["0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "5/9", "0/1", "0/1", "0/1", "4/9", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1"], ["0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "8/21", "0/1", "0/1", "0/1", "13/21", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1"], ["0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "13/23", "0/1", "0/1", "0/1", "10/23", "0/1", "0/1", "0/1", "0/1"], ["0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "10/21", "0/1", "0/1", "0/1", "11/21", "0/1", "0/1"], ["0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "11/26", "0/1", "0/1", "0/1", "15/26"], ["0/1", "14/29", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "0/1", "15/29", "0/1", "0/1"]]
+N = 10
+current_scale_A_exact = "1/10"
+distinct_physical_parameter_tuples = 10
+initial_normalized_lower_exact = ["-9/10", "3/5", "-9/10", "3/5", "-9/10", "3/5", "-9/10", "3/5", "-9/10", "3/5", "-9/10", "3/5", "-9/10", "3/5", "-9/10", "3/5", "-9/10", "3/5", "-9/10", "3/5"]
+initial_normalized_upper_exact = ["-7/10", "4/5", "-7/10", "4/5", "-7/10", "4/5", "-7/10", "4/5", "-7/10", "4/5", "-7/10", "4/5", "-7/10", "4/5", "-7/10", "4/5", "-7/10", "4/5", "-7/10", "4/5"]
+plant_sha256 = "926c18521a3961fc6840b7528687ca02dcefd63f294354c0f16ee7c7867b1064"
+sampling_period_seconds_exact = "1/20000"
+seed = 20261122
+target_radius_exact = "7/20"
+voltage_reference_V_exact = "24/1"
+voltage_scale_V_exact = "1/1"
+
+[[edges]]
+conductance_S_exact = "3/250"
+i = 1
+j = 2
+[[edges]]
+conductance_S_exact = "7/500"
+i = 1
+j = 10
+[[edges]]
+conductance_S_exact = "9/1000"
+i = 2
+j = 3
+[[edges]]
+conductance_S_exact = "9/1000"
+i = 3
+j = 4
+[[edges]]
+conductance_S_exact = "1/100"
+i = 4
+j = 5
+[[edges]]
+conductance_S_exact = "1/125"
+i = 5
+j = 6
+[[edges]]
+conductance_S_exact = "13/1000"
+i = 6
+j = 7
+[[edges]]
+conductance_S_exact = "1/100"
+i = 7
+j = 8
+[[edges]]
+conductance_S_exact = "11/1000"
+i = 8
+j = 9
+[[edges]]
+conductance_S_exact = "3/200"
+i = 9
+j = 10
+
+[[modules]]
+C_F_exact = "59/500000"
+E_V_exact = "51/1"
+G_S_exact = "23/100"
+L_H_exact = "49/50000"
+converter = 1
+current_reference_A_exact = "138/25"
+r_Ohm_exact = "11/100"
+[[modules]]
+C_F_exact = "53/500000"
+E_V_exact = "51/1"
+G_S_exact = "6/25"
+L_H_exact = "27/25000"
+converter = 2
+current_reference_A_exact = "144/25"
+r_Ohm_exact = "2/25"
+[[modules]]
+C_F_exact = "11/100000"
+E_V_exact = "47/1"
+G_S_exact = "21/100"
+L_H_exact = "43/50000"
+converter = 3
+current_reference_A_exact = "126/25"
+r_Ohm_exact = "13/100"
+[[modules]]
+C_F_exact = "21/200000"
+E_V_exact = "52/1"
+G_S_exact = "11/50"
+L_H_exact = "109/100000"
+converter = 4
+current_reference_A_exact = "132/25"
+r_Ohm_exact = "11/100"
+[[modules]]
+C_F_exact = "99/1000000"
+E_V_exact = "51/1"
+G_S_exact = "6/25"
+L_H_exact = "23/25000"
+converter = 5
+current_reference_A_exact = "144/25"
+r_Ohm_exact = "3/20"
+[[modules]]
+C_F_exact = "1/10000"
+E_V_exact = "50/1"
+G_S_exact = "6/25"
+L_H_exact = "57/50000"
+converter = 6
+current_reference_A_exact = "144/25"
+r_Ohm_exact = "2/25"
+[[modules]]
+C_F_exact = "51/500000"
+E_V_exact = "46/1"
+G_S_exact = "4/25"
+L_H_exact = "107/100000"
+converter = 7
+current_reference_A_exact = "96/25"
+r_Ohm_exact = "1/10"
+[[modules]]
+C_F_exact = "111/1000000"
+E_V_exact = "50/1"
+G_S_exact = "9/50"
+L_H_exact = "1/1000"
+converter = 8
+current_reference_A_exact = "108/25"
+r_Ohm_exact = "3/25"
+[[modules]]
+C_F_exact = "53/500000"
+E_V_exact = "51/1"
+G_S_exact = "21/100"
+L_H_exact = "1/1000"
+converter = 9
+current_reference_A_exact = "126/25"
+r_Ohm_exact = "11/100"
+[[modules]]
+C_F_exact = "1/10000"
+E_V_exact = "49/1"
+G_S_exact = "19/100"
+L_H_exact = "83/100000"
+converter = 10
+current_reference_A_exact = "114/25"
+r_Ohm_exact = "3/25"

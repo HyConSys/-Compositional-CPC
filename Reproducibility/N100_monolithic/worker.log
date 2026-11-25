@@ -1,0 +1,16 @@
+monolithic attempt 1: solving free B,V SOS problem
+monolithic attempt 1: repairing and verifying exact SOS identities
+
+[1206302] signal (15): Terminated
+in expression starting at Code/Buck_CPC/Results/Direct_Scaling_Auto_20261124/Source_Snapshot/Benchmark_Direct_CPC.jl:240
+gc_mark_outrefs at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:2385 [inlined]
+gc_mark_loop_serial_ at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:2690
+gc_mark_loop_serial at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:2713
+gc_mark_loop at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:2894 [inlined]
+_jl_gc_collect at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:3227
+ijl_gc_collect at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:3524
+maybe_collect at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:937 [inlined]
+jl_gc_pool_alloc_inner at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:1293
+jl_gc_pool_alloc_noinline at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:1350 [inlined]
+jl_gc_alloc_ at /cache/build/tester-amdci4-11/julialang/julia-master/src/julia_internal.h:478 [inlined]
+jl_gc_alloc at /cache/build/tester-amdci4-11/julialang/julia-master/src/gc.c:3576

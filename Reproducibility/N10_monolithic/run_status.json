@@ -1,0 +1,32 @@
+{
+  "status": "CERTIFIED",
+  "guard_reason": null,
+  "returncode": 0,
+  "wall_seconds": 71.30676940601552,
+  "peak_rss_bytes": 1303482368,
+  "phase_seconds": {
+    "SOS_build": 1.8683900660000001,
+    "SOS_solve": 1.932949644,
+    "controller_search": 0.32033368900000003,
+    "exact_verification": 7.903390161000001,
+    "physical_reconstruction": 0.009194248
+  },
+  "partial_phase": "",
+  "attempt_count": 1,
+  "rejected_attempt_count": 0,
+  "rejected_attempt_seconds": 0,
+  "solver_status": "OPTIMAL",
+  "exact_proof_pass": true,
+  "plant_sha256": "926c18521a3961fc6840b7528687ca02dcefd63f294354c0f16ee7c7867b1064",
+  "search_elapsed_seconds": 12.858047731000001,
+  "reason": "OPTIMAL with exact proof",
+  "reload_verification_seconds": 14.186398755,
+  "scalar_variables": 12213,
+  "SOS_conditions": 47,
+  "coefficient_identities": 10857,
+  "largest_PSD_block": 21,
+  "resource_stage": "",
+  "N": 10,
+  "method": "monolithic",
+  "fresh_reload_pass": true
+}
