@@ -164,21 +164,21 @@ replace `--sizes 2 10 50 100` by `--sizes 10` in the preparation command.
 
 For any $N\ge2$, define the undirected cycle
 
-$$
+```math
 \mathcal E_N=\{\{n,1+(n\bmod N)\}:n=1,\ldots,N\}.
-$$
+```
 
 Edges are unordered and counted once. At $N=2$ there is one physical line.
 Converter $n$ has state $x_n=(i_n,v_n)$ and duty ratio $u_n\in U_n=[0,1]$:
 
-$$
+```math
 \begin{aligned}
 i_n^+ &=i_n+\frac{\tau}{L_n}(E_nu_n-r_ni_n-v_n),\\
 v_n^+ &=v_n+\frac{\tau}{C_n}
 \left(i_n-G_nv_n+\sum_{j\ne n}g_{nj}(v_j-v_n)\right),
 \quad\tau=50\,\mu\mathrm{s}.
 \end{aligned}
-$$
+```
 
 This Euler-discretized averaged model is the defined plant. The certificate
 does not extend to switching ripple or continuous intersample motion.
@@ -201,29 +201,29 @@ the active controller search.
 Let $s_i=0.1$ A, $s_v=1$ V, $v^{\rm ref}=24$ V,
 $i_n^{\rm ref}=G_nv^{\rm ref}$, and
 
-$$
+```math
 z_n=\begin{bmatrix}(i_n-i_n^{\rm ref})/s_i\\
 (v_n-v^{\rm ref})/s_v\end{bmatrix}.
-$$
+```
 
 The physical domains are
 
-$$
+```math
 \begin{aligned}
 X_n&=[i_n^{\rm ref}-0.1,i_n^{\rm ref}+0.1]\times[23,25],\\
 X_{0,n}&=[i_n^{\rm ref}-0.09,i_n^{\rm ref}-0.07]\times[24.6,24.8],\\
 X&=\prod_nX_n,\quad X_0=\prod_nX_{0,n},\quad U=\prod_n[0,1].
 \end{aligned}
-$$
+```
 
 Thus $z_n\in[-1,1]^2$ and initially
 $z_n\in[-0.9,-0.7]\times[0.6,0.8]$.
 
 Write $d_n=\sum_{j\ne n}g_{nj}>0$ and introduce
 
-$$
+```math
 w_n^0=\sum_{j\ne n}\frac{g_{nj}}{d_n}z_{j,2}\in[-1,1],\qquad h_n^0(x_n)=z_n.
-$$
+```
 
 The local voltage equation replaces the line-current sum by
 $d_n[s_vw_n^0-(v_n-v^{\rm ref})]$. Stacking $z$ yields $w^0=Mz$, with
@@ -236,8 +236,8 @@ Converter $n$ emits $a_n$ if $\|z_n\|_2\le r_a=0.35$, and $b_n$ otherwise.
 The separable alphabet is $\prod_n\{a_n,b_n\}$.
 
 A single DPA has initial state $q_{\rm b}$ and priorities
-$\operatorname{pri}(q_{\rm b})=1$ and
-$\operatorname{pri}(q_{\rm g})=2$:
+$\mathsf{pri}(q_{\rm b})=1$ and
+$\mathsf{pri}(q_{\rm g})=2$:
 
 | Current state | At least one $a_n$ | All $b_n$ |
 | --- | --- | --- |
@@ -247,10 +247,10 @@ $\operatorname{pri}(q_{\rm g})=2$:
 Acceptance requires only finitely many all-outside events. Every local problem
 uses the same current global state $q$. Its exact projected successor sets are
 
-$$
+```math
 \delta_n(q,a_n)=\{q_{\rm g}\},\qquad
 \delta_n(q,b_n)=\{q_{\rm b},q_{\rm g}\}.
-$$
+```
 
 All projected successors are enforced; no independent local automaton run is
 chosen. A local bad letter does not determine the global bad label because
@@ -278,10 +278,10 @@ depends on the label of the **current** system state.
 
 For centered coordinates $\xi_n=z_n-e_n$, `target_polynomial` represents
 
-$$
+```math
 g_n(\xi_n)=r_a^2-\|\xi_n+e_n\|_2^2
            =r_a^2-\|z_n\|_2^2.
-$$
+```
 
 Inside `add_monolithic_conditions!`, the `good` array contains these disk
 polynomials. The `cells` construction encodes the global transition:
@@ -333,7 +333,7 @@ For a **different automaton or global Boolean objective**:
    `add_monolithic_conditions!`. Split unions into branches as needed and
    cover every actual label region, handling boundaries consistently.
 3. Recompute each local successor set from the global transition table:
-   $\delta_n(q,\sigma_n)=\{\delta(q,\sigma):\operatorname{Proj}_n(\sigma)=\sigma_n\}$.
+   $\delta_n(q,\sigma_n)=\{\delta(q,\sigma):\mathsf{Proj}_n(\sigma)=\sigma_n\}$.
    Update the loop in `add_local_conditions!` and enforce **all** successors
    in each set. They are determined by projection, not chosen independently.
 4. Update certificate arrays, initial-state conditions and priority-dependent
@@ -353,10 +353,10 @@ For example, changing the objective to **all converters inside** changes the
 monolithic good region to the intersection of all disks and the bad region
 to a union of exterior branches. Its local successor sets become
 
-$$
+```math
 \delta_n(q,a_n)=\{q_{\rm b},q_{\rm g}\},\qquad
 \delta_n(q,b_n)=\{q_{\rm b}\}\qquad(N\ge2).
-$$
+```
 
 Consequently this change requires both global and local constraint changes.
 The projected conditions can be more conservative, and the current local
@@ -371,43 +371,47 @@ disk-availability specification; keep them separate from new experiments.
 
 Both methods search
 
-$$
+```math
 u_n=a_n^u+
 \frac{-k_{i,n}(i_n-i_n^{\rm ref})+k_{v,n}(v_n-v^{\rm ref})}{E_n},
-$$
+```
 
 with $3N$ unknown offsets and gains. The chosen family is independent of $q$.
 The reference state defines coordinates, not a prescribed equilibrium.
 
 For numerical conditioning, the default LP variables are
 
-$$
+```math
 \begin{aligned}
 t_n&=1-\tau(r_n+k_{i,n})/L_n,\\
 s_n^u&=\tau(k_{v,n}-1)s_v/(L_ns_i),\\
 c_n^u&=\tau(E_na_n^u-r_ni_n^{\rm ref}-v^{\rm ref})/(L_ns_i).
 \end{aligned}
-$$
+```
 
 This invertible affine change gives the exact candidate closed loop
 
-$$
+```math
 z_n^+=F_n(\theta_n)[w_n^0;z_n]+c_n(\theta_n),\qquad
 F_n=\begin{bmatrix}
 0&t_n&s_n^u\\
 \tau d_n/C_n&\tau s_i/(C_ns_v)&1-\tau(G_n+d_n)/C_n
-\end{bmatrix},\quad c_n=\begin{bmatrix}c_n^u\\0\end{bmatrix}.
-$$
+\end{bmatrix},\qquad
+c_n=\begin{bmatrix}
+c_n^u\\
+0
+\end{bmatrix}.
+```
 
 The admissible-controller polytope imposes
 
-$$
+```math
 \begin{aligned}
 \delta_n^u&=(s_i|k_{i,n}|+s_v|k_{v,n}|)/E_n,\\
 a_n^u&\ge\delta_n^u,\qquad a_n^u+\delta_n^u\le1,\\
 |(c_n)_i|+\sum_{j=1}^3|(F_n)_{ij}|&\le1,\quad i=1,2.
 \end{aligned}
-$$
+```
 
 Absolute-value epigraphs make these linear constraints. They guarantee input
 admissibility and robust box preservation over the entire local state and
@@ -429,16 +433,16 @@ For each candidate, assemble $z^+=A_\theta z+c_\theta$ and compute
 $e=(I-A_\theta)^{-1}c_\theta$. The implementation requires an invertible
 $I-A_\theta$ and $|e_i|<1$ for conditioning. It sets
 
-$$
+```math
 \xi=z-e,\qquad\omega=w^0-Me=M\xi,\qquad h_n(x_n)=\xi_n.
-$$
+```
 
 The translated local domains are
 
-$$
+```math
 Y_n=[-1,1]^2-e_n,\qquad
 W_n=[-1-(Me)_n,1-(Me)_n].
-$$
+```
 
 The local dynamics use $w_n^0=\omega_n+(Me)_n$; target generators become
 $r_a^2-\|\xi_n+e_n\|^2$. Initial boxes are translated by $-e_n$ as well.
@@ -462,10 +466,10 @@ invariant function $B(x,q)$ and ranks $V_j(x,q)$, $j\in\mathcal O$.
 Initially $B\le0$, and $B\le0$ implies $V_j\ge0$. On $B\le0$, one admissible
 input must preserve the state domain and invariant, while
 
-$$
-V_j(x^+,q^+)\le V_j(x,q)\quad(j<\operatorname{pri}(q)),\qquad
-V_k(x^+,q^+)\le V_k(x,q)-1\quad(k=\operatorname{pri}(q)\text{ odd}).
-$$
+```math
+V_j(x^+,q^+)\le V_j(x,q)\quad(j<\mathsf{pri}(q)),\qquad
+V_k(x^+,q^+)\le V_k(x,q)-1\quad(k=\mathsf{pri}(q)\text{ odd}).
+```
 
 The invariant is on the system--automaton product; $B$ is not generally a
 defining function of the target set.
@@ -475,7 +479,7 @@ defining function of the target set.
 There is one odd priority. For $f_\theta(x)=f(x,\mu_\theta(x))$,
 $q^+=\delta(q,L(x))$, common $\alpha=0.01$ and $\varepsilon=0.001N$, impose
 
-$$
+```math
 \begin{aligned}
 -B_{q_{\rm b}}&\ge0 &&\text{on }X_0,\\
 V_q+\alpha B_q&\ge0 &&\text{on }X,\ q\in Q,\\
@@ -483,7 +487,7 @@ V_q+\alpha B_q&\ge0 &&\text{on }X,\ q\in Q,\\
 V_q+\alpha B_q-V_{q^+}\circ f_\theta
 -\varepsilon\mathbf1_{\{q=q_{\rm b}\}}&\ge0 &&\text{on each label cell}.
 \end{aligned}
-$$
+```
 
 These are stronger sufficient conditions for the original implications.
 Input and state-domain admissibility are checked separately. Scaling $B,V$
@@ -497,13 +501,13 @@ Initially $-B_{n,q_{\rm b}}\ge0$ and everywhere
 $V_{n,q}+\alpha B_{n,q}\ge0$. For every local state, every
 $\omega_n\in W_n$ and every $q^+\in\delta_n(q,L_n(x_n))$, impose
 
-$$
+```math
 \begin{aligned}
 R_{B,n,q,q^+}&=\alpha B_{n,q}+s_n^\top\Upsilon_ns_n-B_{n,q^+}(x_n^+)\ge0,\\
 R_{V,n,q,q^+}&=V_{n,q}+\alpha B_{n,q}+s_n^\top\Gamma_ns_n
 -V_{n,q^+}(x_n^+)-\varepsilon_n\mathbf1_{\{q=q_{\rm b}\}}\ge0.
 \end{aligned}
-$$
+```
 
 One controller satisfies all applicable obligations. It cannot depend on
 $\omega_n$ or the selected projected successor. The supply matrices are common
@@ -512,19 +516,19 @@ Neither supply matrix is required individually to be negative semidefinite.
 
 Composition enforces
 
-$$
+```math
 \overline\Gamma=\sum_nT_n^\top\Gamma_nT_n\preceq0,\qquad
 \overline\Upsilon=\sum_nT_n^\top\Upsilon_nT_n\preceq0,\qquad
 \varepsilon=\sum_n\varepsilon_n>0.
-$$
+```
 
 Since all local inequalities use the same current priority, summation gives
 strict global progress $\varepsilon$ at $q_{\rm b}$. Thus
 
-$$
+```math
 \widehat B=\frac{\sum_nB_n}{\varepsilon},\qquad
 \widehat V=\frac{\sum_nV_n}{\varepsilon}
-$$
+```
 
 satisfy the monolithic conditions. A zero local step removes only its strict
 decrement, not its rank, lower bound or other transition conditions.
@@ -546,10 +550,10 @@ imposed.
 
 For a domain $D=\{\zeta:g_\ell(\zeta)\ge0\}$, each residual is certified by
 
-$$
+```math
 R(\zeta)=m(\zeta)^\top Q_Rm(\zeta)+\sum_\ell\lambda_{R,\ell}g_\ell(\zeta),
 \qquad Q_R\succeq0,\quad\lambda_{R,\ell}\ge0,\quad m=[1;\zeta].
-$$
+```
 
 All multipliers are independent nonnegative constants. Local transition
 residuals have three variables $(\omega_n,\xi_n)$; global residuals have $2N$.
@@ -571,9 +575,9 @@ TSSOS sparsity heuristic, sampled replacement for SOS, or CEGIS stage.
 
 For each supply family $S$, the implementation matches every entry of
 
-$$
+```math
 -\sum_nT_n^\top S_nT_n=\sum_C E_C^\top Z_CE_C,\qquad Z_C\succeq0.
-$$
+```
 
 The chordal extension eliminates current coordinates before voltage
 coordinates. Fill entries are matched too, including entries that must cancel
@@ -778,10 +782,13 @@ julia --project=. Benchmark_Direct_CPC.jl show \
 
 The underlying matrix convention is
 
-$$
-p(s)=\begin{bmatrix}1\\s\end{bmatrix}^{\!T}
-H\begin{bmatrix}1\\s\end{bmatrix}.
-$$
+```math
+p(s)=\begin{bmatrix}1 & s^\top\end{bmatrix}
+H\begin{bmatrix}
+1\\
+s
+\end{bmatrix}.
+```
 
 Thus linear and mixed quadratic coefficients are **twice** the corresponding
 off-diagonal entries of $H$. The viewer performs this expansion automatically.
